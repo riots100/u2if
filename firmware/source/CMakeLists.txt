@@ -39,7 +39,7 @@ if (NOT DEFINED HUB75_ALLOW)
 endif()
 
 if (NOT DEFINED WS2812_SIZE)
-        set(WS2812_SIZE 1000)
+        set(WS2812_SIZE 10)
 endif()
 
 if (NOT DEFINED WS2812_ENABLED)
@@ -65,8 +65,8 @@ add_executable(u2if
 
 # generate the header file into the source tree as it is included in the RP2040 datasheet
 pico_generate_pio_header(u2if ${CMAKE_CURRENT_LIST_DIR}/interfaces/ws2812.pio OUTPUT_DIR ${CMAKE_CURRENT_LIST_DIR}/interfaces/)
-pico_generate_pio_header(u2if ${CMAKE_CURRENT_LIST_DIR}/interfaces/audio_i2s.pio OUTPUT_DIR ${CMAKE_CURRENT_LIST_DIR}/interfaces/)
-pico_generate_pio_header(u2if ${CMAKE_CURRENT_LIST_DIR}/interfaces/hub75.pio OUTPUT_DIR ${CMAKE_CURRENT_LIST_DIR}/interfaces/)
+#pico_generate_pio_header(u2if ${CMAKE_CURRENT_LIST_DIR}/interfaces/audio_i2s.pio OUTPUT_DIR ${CMAKE_CURRENT_LIST_DIR}/interfaces/)
+#pico_generate_pio_header(u2if ${CMAKE_CURRENT_LIST_DIR}/interfaces/hub75.pio OUTPUT_DIR ${CMAKE_CURRENT_LIST_DIR}/interfaces/)
 
 target_include_directories(u2if PRIVATE ${CMAKE_CURRENT_LIST_DIR})
 
