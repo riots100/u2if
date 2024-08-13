@@ -1,5 +1,7 @@
 cmake_minimum_required(VERSION 3.12)
 
+set(DEFAULT_CMAKE_BUILD_TYPES "Debug" "Release")
+
 # Set PICO_SDK_PATH to parent directory
 get_filename_component(PICO_SDK_PATH "${CMAKE_CURRENT_LIST_DIR}/../pico-sdk" ABSOLUTE)
 
@@ -41,7 +43,7 @@ if (NOT DEFINED WS2812_SIZE)
 endif()
 
 if (NOT DEFINED WS2812_ENABLED)
-        set(WS2812_ENABLED 1)
+        set(WS2812_ENABLED 0)
 endif()
 
 if (NOT DEFINED HUB75_MAX_LEDS)
